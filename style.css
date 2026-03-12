@@ -1,0 +1,475 @@
+/* 
+  Loving Homes Dog Hotel - Home Page
+  Based on student's mock-up.
+  Colour palette:
+    #F7F1E9 (cream), #E9D9C7 (beige), #C9A27A (tan),
+    #7A5A3A (brown), #26201A (dark)
+*/
+
+/* ---------- COLOUR VARIABLES ---------- */
+
+:root {
+    --cream: #F7F1E9;
+    --beige: #E9D9C7;
+    --tan: #C9A27A;
+    --brown: #7A5A3A;
+    --dark: #26201A;
+
+    --text-body: #26201A;
+    --text-muted: #6b5a48;
+}
+
+/* ---------- BASIC RESET ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: var(--cream);
+    color: var(--text-body);
+}
+
+/* Wrapper to keep layout centred like a normal website */
+.page {
+    max-width: 1200px;   /* desktop width */
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: var(--cream);
+    padding: 0 1.5rem;
+}
+
+/* Reusable section padding */
+.section {
+    padding: 2.5rem 0;
+}
+
+/* ---------- HEADER + TOP NAV ---------- */
+
+.site-header {
+    padding: 0.3rem 0 0.1rem;  /* tiny bottom padding so the border is visible */
+    text-align: center;
+    border-bottom: 1px solid var(--beige);
+}
+
+.top-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.logo-img {
+    height: 50px;   /* bigger logo on all screens */
+    width: auto;
+}
+
+.logo-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Top nav links */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.3rem;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.95rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--brown);
+}
+
+/* ---------- HERO BANNER ---------- */
+
+.hero-banner {
+    position: relative;
+    margin-top: 1.5rem;   /* small gap under the line, but still tight */
+}
+
+.hero-banner img {
+    display: block;
+    width: 100%;
+    border-radius: 0 0 20px 20px; /* rounded bottom like your design */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 50%;         /* vertically centered */
+    right: 3%;        /* a bit in from the right edge */
+    transform: translateY(-50%);
+    text-align: right;
+}
+
+.hero-overlay h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 5rem;   /* bigger main title */
+    color: #fdf3e6;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* General button style */
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.6rem;
+    border-radius: 999px;
+    border: none;
+    text-decoration: none;
+    font-family: "Lato", sans-serif;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+/* Book Now button on hero image */
+.hero-btn {
+    background-color: var(--brown);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- SECTION TITLE WITH LINES ---------- */
+
+.section-title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 1.6rem;
+    font-family: "Playfair Display", serif;
+    font-size: 1.4rem;
+    color: var(--brown);
+}
+
+.section-title span {
+    background-color: var(--cream);
+    padding: 0 0.6rem;
+}
+
+/* Lines to left and right of section title */
+.section-title::before,
+.section-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 28%;
+    height: 1px;
+    background-color: var(--brown);
+}
+
+.section-title::before {
+    left: 5%;
+}
+
+.section-title::after {
+    right: 5%;
+}
+
+/* ---------- SERVICES OVAL IMAGES ---------- */
+
+.section-services {
+    padding-top: 2.2rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.service-item {
+    position: relative;
+    border-radius: 999px;
+    overflow: hidden;
+    height: 200px;  /* NEW: same height for all ovals */
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+/* Make the whole oval clickable, but keep it looking like a card not a normal link */
+.service-link {
+    text-decoration: none;
+    color: inherit;           /* keep text the same colour */
+    display: block;
+}
+
+/* Slight hover effect for accessibility/feedback */
+.service-item {
+    position: relative;
+    border-radius: 999px;
+    overflow: hidden;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.service-link:hover .service-item,
+.service-link:focus-visible .service-item {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.service-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* ---------- PACKAGES SECTION ---------- */
+
+.section-packages {
+    padding-top: 2.2rem;
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.package-card {
+    background-color: var(--beige);
+    border-radius: 18px;
+    padding: 1.2rem 1rem;
+    font-size: 0.9rem;
+}
+
+.package-card h3 {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+}
+
+/* thin line under package heading */
+.package-divider {
+    height: 2px;
+    background-color: var(--brown);
+    margin: 0.2rem 0 0.8rem;
+}
+
+.package-card ul {
+    list-style: disc;
+    padding-left: 1.1rem;
+}
+
+.package-card li + li {
+    margin-top: 0.25rem;
+}
+
+/* Premium card a bit darker */
+.package-card--highlight {
+    background-color: var(--tan);
+    color: #fff;
+}
+
+.package-card--highlight .package-divider {
+    background-color: #fff;
+}
+
+/* "View all packages" button under the cards */
+.packages-button-row {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.packages-btn {
+    background-color: var(--brown);
+    color: #fff;
+    padding: 0.7rem 2rem;
+}
+
+/* ---------- CONTACT SECTION ---------- */
+
+.section-contact {
+    padding-top: 2.2rem;
+    padding-bottom: 3rem;
+}
+
+.contact-card {
+    /* removed border so no extra line under the heading */
+    padding-top: 0.5rem;   /* smaller gap above the content */
+    font-size: 0.95rem;
+}
+
+.contact-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+}
+
+.contact-icon {
+    font-size: 1.2rem;
+    margin-top: 0.1rem;
+}
+
+.contact-card h3 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.contact-card a {
+    color: var(--dark);
+    text-decoration: none;
+}
+
+/* ---------- FOOTER + BOTTOM NAV ---------- */
+
+.site-footer {
+    border-top: 1px solid var(--brown);
+    padding: 0.7rem 0 1.4rem;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.bottom-nav a {
+    text-decoration: none;
+    color: var(--dark);
+}
+
+/* ---------- SERVICE DETAIL PAGES ---------- */
+
+.service-detail-title {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    color: var(--brown);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.service-detail-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.service-detail-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 24px;
+    display: block;
+    margin: 0 auto;
+}
+
+.service-detail-text h2 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem;
+}
+
+.service-detail-text p {
+    margin-bottom: 0.8rem;
+}
+
+.service-detail-text ul {
+    padding-left: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* On wider screens, put image and text side by side */
+@media (min-width: 900px) {
+    .service-detail-layout {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .service-detail-image {
+        flex: 0 0 45%;
+    }
+
+    .service-detail-text {
+        flex: 1;
+    }
+}
+
+/* ---------- VERY SMALL SCREENS ---------- */
+
+/* On extra-small screens, services and packages go one per row */
+@media (max-width: 380px) {
+    .services-grid,
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title::before,
+    .section-title::after {
+        width: 20%;
+    }
+}
+
+/* ---------- DESKTOP LAYOUT (wider screens) ---------- */
+
+@media (min-width: 900px) {
+    /* Header: logo left, nav right */
+    .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .top-logo {
+        justify-content: flex-start;
+    }
+
+    .main-nav ul {
+        justify-content: flex-end;
+    }
+
+    /* Bigger logo on desktop */
+.logo-img {
+    height: 150px;
+}
+
+    /* Hero image more rounded on big screens */
+    .hero-banner img {
+        border-radius: 30px;
+    }
+
+    /* Services: 4 across */
+    .services-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    /* Packages: 2 cards, centred */
+    .packages-grid {
+        grid-template-columns: repeat(2, minmax(0, 260px));
+        justify-content: center;
+    }
+
+    /* Contact: slightly narrower column */
+    .section-contact .contact-card {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}

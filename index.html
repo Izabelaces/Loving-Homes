@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loving Homes Dog Hotel</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Page wrapper: keeps layout centred and sets max width -->
+    <div class="page">
+
+        <!-- ================= HEADER ================= -->
+        <header class="site-header">
+          <div class="top-logo">
+            <img src="Images/Logo.png" alt="Loving Homes logo" class="logo-img">
+        </div>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main>
+            <!-- HERO IMAGE BANNER -->
+            <section id="hero" class="hero-banner">
+                <!-- Main hero picture from Images folder -->
+                <img src="Images/Main_Picture.png" alt="Golden retriever relaxing on a round luxury dog bed in a cosy room">
+
+                <!-- Text overlay on top of the picture -->
+                <div class="hero-overlay">
+                    <h1>Loving Homes</h1>
+                    <a href="#contact" class="btn hero-btn">Book Now</a>
+                </div>
+            </section>
+
+            <!-- SERVICES SECTION -->
+            <section id="services" class="section section-services">
+                <h2 class="section-title"><span>Services</span></h2>
+
+                <div class="services-grid">
+                    <!-- Luxury Rooms & Comfort -->
+                    <a href="luxury-rooms.html" class="service-link">
+                        <article class="service-item">
+                            <img src="Images/Luxury_Rooms.png" alt="Dog relaxing in a luxury room with cosy lighting">
+                            <div class="service-label">Luxury Rooms &amp; Comfort</div>
+                        </article>
+                    </a>
+                
+                    <!-- Walks & Outdoor Play -->
+                    <a href="walks-outdoor-play.html" class="service-link">
+                        <article class="service-item">
+                            <img src="Images/Walks_And_Outdoor_Play.png" alt="Two dogs outdoors ready for a walk">
+                            <div class="service-label">Walks &amp; Outdoor Play</div>
+                        </article>
+                    </a>
+                
+                    <!-- Grooming & Spa -->
+                    <a href="grooming-spa.html" class="service-link">
+                        <article class="service-item">
+                            <img src="Images/Grooming_And_Spa.png" alt="Dog enjoying grooming and spa session">
+                            <div class="service-label">Grooming &amp; Spa</div>
+                        </article>
+                    </a>
+                
+                    <!-- Activities & Pet Watch -->
+                    <a href="activities-pet-watch.html" class="service-link">
+                        <article class="service-item">
+                            <img src="Images/Activities_And_Pet_Watch.png" alt="Dogs playing with toys and mobile phone for pet watch">
+                            <div class="service-label">Activities &amp; Pet Watch</div>
+                        </article>
+                    </a>
+                </div>
+            </section>
+
+            <!-- PACKAGES SECTION -->
+            <section id="packages" class="section section-packages">
+                <h2 class="section-title"><span>Packages</span></h2>
+            
+                <div class="packages-grid">
+                    <!-- Classic package (from specification) -->
+                    <article class="package-card">
+                        <h3>Classic</h3>
+                        <div class="package-divider"></div>
+                        <ul>
+                            <li>Three walks/activities per day</li>
+                            <li>Indoor play barn</li>
+                            <li>Zen zone</li>
+                            <li>Grooming session</li>
+                        </ul>
+                    </article>
+            
+                    <!-- Premium package (from specification) -->
+                    <article class="package-card package-card--highlight">
+                        <h3>Premium</h3>
+                        <div class="package-divider"></div>
+                        <ul>
+                            <li>Four walks/activities per day</li>
+                            <li>Private grass area</li>
+                            <li>Daily updates/photos</li>
+                            <li>Treats (as agreed with owner)</li>
+                        </ul>
+                    </article>
+                </div>
+            
+                <div class="packages-button-row">
+                    <!-- NEW: link goes to packages.html -->
+                    <a href="packages.html" class="btn packages-btn">View all packages</a>
+                </div>
+            </section>
+
+            <!-- CONTACT SECTION -->
+            <section id="contact" class="section section-contact">
+                <h2 class="section-title"><span>Contact</span></h2>
+
+                <div class="contact-card">
+                    <div class="contact-block">
+                        <div class="contact-icon" aria-hidden="true">📍</div>
+                        <div>
+                            <h3>Loving Homes</h3>
+                            <p>
+                                Level 12, Harbour View Tower<br>
+                                Tsim Sha Tsui, Kowloon<br>
+                                Hong Kong
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-block">
+                        <div class="contact-icon" aria-hidden="true">📞</div>
+                        <p>+852 6135 4567</p>
+                    </div>
+
+                    <div class="contact-block">
+                        <div class="contact-icon" aria-hidden="true">✉️</div>
+                        <p><a href="mailto:hello@lovinghomes.hk">hello@lovinghomes.hk</a></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ================= FOOTER ================= -->
+        <footer class="site-footer">
+            <nav class="bottom-nav" aria-label="Footer navigation">
+                <a href="#hero">Home</a>
+                <a href="#services">Services</a>
+                <a href="#packages">Packages</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <p class="footer-note">&copy; 2025 Loving Homes. BTEC Unit 6 student project.</p>
+        </footer>
+
+    </div>
+</body>
+</html>
